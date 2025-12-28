@@ -22,6 +22,6 @@ variable "admin_username" {
 }
 
 variable "admin_password" {
-  description = "redhat"
+  description = "3[N)5nkb9R9#"
   type        = string
 }
