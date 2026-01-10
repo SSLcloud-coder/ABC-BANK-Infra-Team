@@ -115,6 +115,14 @@ resource "azurerm_virtual_machine" "vm" {
     managed_disk_type = "Standard_LRS"
   }
 
+# Disk-1 Added 
+    storage_os_disk-1 {
+    name              = "${var.prefix}-osdisk-1"
+    caching           = "ReadWrite_all"
+    create_option     = "FromImage_all"
+    managed_disk_type = "Standard_LRS_all"
+  }
+
   os_profile {
     computer_name  = "${var.prefix}-vm"
     admin_username = var.admin_username
