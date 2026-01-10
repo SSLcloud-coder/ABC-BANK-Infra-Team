@@ -34,6 +34,19 @@ resource "azurerm_network_interface" "nic" {
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
   }
+
+}
+resource "azurerm_network_interface" "nic-1" {
+  name                = "${var.prefix}-nic-1"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  ip_configuration {
+    name                          = "internal-1"
+    subnet_id                     = azurerm_subnet.subnet.id-1
+    private_ip_address_allocation = "Dynamic-1"
+  }
+
 }
 
 resource "azurerm_virtual_machine" "vm" {
