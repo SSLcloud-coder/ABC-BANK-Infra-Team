@@ -47,7 +47,7 @@ resource "azurerm_network_interface" "nic-1" {
     private_ip_address_allocation = "Dynamic-1"
   }
 
-}
+}  
 
 # JIRA 101-NIC-2 added
 resource "azurerm_network_interface" "nic-2" {
@@ -62,6 +62,20 @@ resource "azurerm_network_interface" "nic-2" {
   }
 
 }
+  
+  # JIRA 102 NIC-3 Added
+resource "azurerm_network_interface" "nic-3" {
+  name                = "${var.prefix}-nic-3"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  ip_configuration {
+    name                          = "internal-3"
+    subnet_id                     = azurerm_subnet.subnet.id-1
+    private_ip_address_allocation = "Dynamic-3"
+  }
+  
+}                   
 
 resource "azurerm_virtual_machine" "vm" {
   name                  = "${var.prefix}-vm"
