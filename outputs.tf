@@ -3,7 +3,7 @@ output "resource_group_name" {
 }
 
 output "vm_name" {
-  value = azurerm_virtual_machine.vm.name.rg
+  value = azurerm_virtual_machine.vm.name.rg.1
 }
 
 output "private_ip" {

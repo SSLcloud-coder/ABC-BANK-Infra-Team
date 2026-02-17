@@ -108,20 +108,12 @@ resource "azurerm_virtual_machine" "vm" {
     version   = "latest"
   }
 
-  storage_os_disk {
-    name              = "${var.prefix}-osdisk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
-  }
-
-# Disk-1 Added 
-    storage_os_disk-1 {
-    name              = "${var.prefix}-osdisk-1"
-    caching           = "ReadWrite_all"
-    create_option     = "FromImage_all"
-    managed_disk_type = "Standard_LRS_all"
-  }
+storage_os_disk {
+  name              = "${var.prefix}-osdisk"
+  caching           = "ReadWrite"
+  create_option     = "FromImage"
+  managed_disk_type = "Standard_LRS"
+}
 
   os_profile {
     computer_name  = "${var.prefix}-vm"
