@@ -1,4 +1,4 @@
-output "resource_group_name" {
+output "resource_group_name-1" {
   value = azurerm_resource_group.rg.name
 }
 
