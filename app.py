@@ -5,7 +5,7 @@ PORT = int(os.environ.get("APP_PORT", 8000))
 
 class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
+        self.send_response(2000)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
         self.wfile.write(f"App Running on Port {PORT}".encode())
