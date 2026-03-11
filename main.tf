@@ -15,6 +15,12 @@ resource "azurerm_virtual_network" "vnet-4" {
   location           = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
+resource "azurerm_virtual_network" "vnet-5" {
+  name                = "${var.prefix}-vnet-5"
+  address_space       = ["10.54.56.48/16"]
+  location           = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+}
 resource "azurerm_virtual_network" "vnet-3" {
   name                = "${var.prefix}-vnet-3"
   address_space       = ["10.44.11.22/16"]
