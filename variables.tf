@@ -1,7 +1,7 @@
 variable "prefix" {
   description = "Prefix for all resource names"
-  type        = boolean
-  default     = "demo"
+  type        = string
+  default     = "demo-12345"
 }
 
 variable "location" {
