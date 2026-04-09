@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: abc-bank-pod
+  labels:
+    app: abc-bank
+spec:
+  containers:
+    - name: abc-bank-container
+      image: nginx:stable
+      ports:
+        - containerPort: 80
+      env:
+        - name: APP_PORT
+          value: "80"
